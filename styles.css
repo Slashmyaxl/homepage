@@ -72,6 +72,7 @@ header > .hero {
     transform-origin: left;
     box-shadow: 1px 1px 3px #999;
     font-family: Merriweather;
+    margin-bottom: 0.2rem;
 }
 
 .photo-container > img {
@@ -102,6 +103,7 @@ aside > .about-heading {
 }
 
 aside > p:nth-child(2) {
+    margin-top: 0.25rem;
     padding: 0.25rem 0.15rem;
 }
 
@@ -113,6 +115,7 @@ aside > .icon-container {
 
 main {
     padding: 4rem 1.5rem;
+    margin-top: 1.5rem;
 }
 
 main > h2 {
@@ -252,14 +255,14 @@ footer {
 }
 
 .icon {
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
     cursor: pointer;
 }
 
 .icon-small {
-    width: 28px;
-    height: 28px;
+    width: 30px;
+    height: 30px;
 }
 
 a {
@@ -273,32 +276,32 @@ i {
 
 @media (max-width: 980px) {
     .container {
-        width: clamp(580px, 86%, 1080px);
+        min-width: 580px;
     }
 
     header {
         height: 400px;
-        padding: 8rem 1.5rem 3rem 2.5rem;
     }
 
     header > .hero {
         display: block;
-        min-height: 300px;
-        max-width: 560px;
+        min-height: 316px;
+        max-width: 570px;
+        margin: 8rem 1rem 0 3rem;
         padding: 0 0.8rem;
     }
 
     .hero > .photo-container {
-        transform: scale(1.25);
+        transform: scale(1.35);
         transform-origin: right bottom;
-        height: 240px;
-        margin: 0 0.8rem;
+        height: 236px;
+        margin-right: 0.8rem;
         float: left;
     }
 
     .photo-container > img {
         width: 190px;
-        height: 240px;
+        height: 236px;
     }
 
     .hero > aside {
@@ -317,6 +320,10 @@ i {
 }
 
 @media (max-width: 600px) {
+    .container {
+        min-width: 320px;
+    }
+
     header {
         padding: 2rem;
         height: 360px;
@@ -327,6 +334,7 @@ i {
     }
 
     header > .hero {
+        margin: unset;
         background-color: var(--desert-trim);
         display: flex;
         flex-direction: column;
@@ -374,6 +382,7 @@ i {
     footer {
         display: flex;
         flex-direction: column;
+        gap: 1.5rem;
         padding: 1.75rem 0 0;
     }
 
