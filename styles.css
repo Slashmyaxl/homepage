@@ -9,7 +9,7 @@
 }
 
 :root {
-    font-size: 18px;
+    font-size: 20px;
     --shade-mint: hsl(164, 60%, 75%);
     --desert-trim: hsl(35, 65%, 88%);
     font-family: "Roboto Flex", 'Arial Narrow Bold', sans-serif;
@@ -25,7 +25,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    width: clamp(380px, 80%, 1080px);
+    width: clamp(360px, 86%, 1080px);
     background-color: var(--desert-trim);
 
 }
@@ -59,11 +59,11 @@ header * {
 header > .hero {
     background-color: #fefefe;
     display: grid;
-    grid-template-columns: 220px 1fr;
-    grid-template-rows: 260px;
-    gap: 3.5rem;
+    grid-template-columns: 240px 1fr;
+    grid-template-rows: 300px;
+    gap: 3.25rem;
     box-shadow: 1px 1px 3px #999;
-    width: max(580px, 70%);
+    width: max(720px, 80%);
 }
 
 .hero > .photo-container {
@@ -76,7 +76,7 @@ header > .hero {
 
 .photo-container > img {
     width: 100%;
-    height: 260px;
+    height: 300px;
     object-fit: cover;
 }
 
@@ -86,6 +86,7 @@ header h1 {
     left: 6%;
     color: #fefefe;
     opacity: 0.85;
+    font-size: 1.8rem;
 }
 
 .hero > aside {
@@ -111,11 +112,11 @@ aside > .icon-container {
 }
 
 main {
-    padding: 2rem;
+    padding: 4rem 1.5rem;
 }
 
 main > h2 {
-    font-size: 1.9rem;
+    font-size: 1.8rem;
     font-weight: normal;
     font-family: Merriweather;
     margin-left: 2rem;
@@ -152,7 +153,7 @@ main > h2 {
 
 .project > .heading {
     padding: 0.55rem 0.75rem 0.25rem 1rem;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: bold;
     color: #fefefe;
     text-shadow: 1px 1px #333;
@@ -162,7 +163,7 @@ main > h2 {
 }
 
 .project > .desc {
-    padding: 0.4rem 0.6rem;
+    padding: 0.3rem 0.6rem;
     color: #444;
     border-radius: 0 0 10px 10px;
     box-shadow: inset 6px 6px 28px #eee,
@@ -206,12 +207,8 @@ footer {
 }
 
 .footer-left > h3 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     margin-bottom: 0.8rem;
-}
-
-.footer-left > p {
-    font-size: 1.1rem;
 }
 
 .footer-left > .contact-info {
@@ -240,6 +237,9 @@ footer {
 .footer-right {
     width: 260px;
     flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .footer-right > img {
@@ -267,32 +267,63 @@ a {
 }
 
 i {
-    font-size: 1.35rem;
+    font-size: 1.25rem;
     color: #fefefe;
 }
 
-@media (max-width: 1270px) {
-    header > .hero {
-        grid-template-columns: 220px 1fr;
-        grid-template-rows: 260px 1fr;
+@media (max-width: 980px) {
+    .container {
+        width: clamp(580px, 86%, 1080px);
+    }
 
+    header {
+        height: 400px;
+        padding: 8rem 1.5rem 3rem 2.5rem;
+    }
+
+    header > .hero {
+        display: block;
+        min-height: 300px;
+        max-width: 560px;
+        padding: 0 0.8rem;
     }
 
     .hero > .photo-container {
-        position: relative;
         transform: scale(1.25);
         transform-origin: right bottom;
+        height: 240px;
+        margin: 0 0.8rem;
+        float: left;
+    }
+
+    .photo-container > img {
+        width: 190px;
+        height: 240px;
+    }
+
+    .hero > aside {
+        display: inline;
+        color: #333;
+    }
+
+    aside > .icon-container {
+        display: none;
+    }
+
+    footer {
+        padding: 2rem 1.25rem;
+        gap: 1rem;
     }
 }
 
-@media (max-width: 580px) {
+@media (max-width: 600px) {
     header {
         padding: 2rem;
         height: 360px;
     }
 
     .header-bg {
-        transform: skewY(-22deg)
+        transform: skewY(-28deg)
     }
 
     header > .hero {
@@ -302,13 +333,17 @@ i {
         gap: unset;
         position: absolute;
         width: 70%;
+        max-width: 300px;
         top: 1.5rem;
-        box-shadow: unset
+        box-shadow: unset;
+        padding: unset;
     }
 
     .hero > .photo-container {
         transform: unset;
+        float: unset;
         height: 360px;
+        margin: unset;
     }
 
     .hero > aside {
@@ -318,12 +353,22 @@ i {
         padding: 1rem 0;
     }
 
+    aside > .icon-container {
+        display: flex;
+    }
+
     .photo-container > img {
         height: 360px;
+        width: 100%;
     }
 
     main {
-        padding-top: 20rem;
+        margin-top: 16rem;
+    }
+
+    main > h2 {
+        text-align: center;
+        margin: unset;
     }
 
     footer {
